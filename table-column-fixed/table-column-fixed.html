@@ -9,10 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <style>
         table {
-            width: auto;
-            position: relative;
+            position: relative; /* 이번 예제에선 없어도 되긴하지만, 구성에 따라 필요할 수 있음. */
         }
-
         th,
         td {
             width: 300px;
@@ -26,7 +24,7 @@
         th:first-child,
         td:first-child {
             position: sticky;
-            background-color: white;
+            background-color: white; /* 바탕을 불투명하게 처리해야 뒤로 숨은 다른 열들을 잘 가릴 수 있다 */
             left: 0;
             z-index: 99;
         }
@@ -38,32 +36,18 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>fixed</th>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>3</th>
-                    <th>4</th>
-                    <th>5</th>
-                    <th>6</th>
-                    <th>7</th>
-                    <th>8</th>
-                    <th>9</th>
-                    <th>10</th>
+                    <th>이름</th>
+                    <th v-for="j in 10">
+                        {{ j }}
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="i in 100">
-                    <td>fixed {{ i }}</td>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>
+                    <td>OOO {{ i }}</td>
+                    <td v-for="j in 10">
+                        <input type="checkbox" />
+                    </td>
                 </tr>
             </tbody>
         </table>
