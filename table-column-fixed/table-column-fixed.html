@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <style>
+        table {
+            width: auto;
+            position: relative;
+        }
+
+        th,
+        td {
+            width: 300px;
+            height: 50px;
+            min-width: 300px;
+            /* 스크롤 생성을 위해 인위적으로 키운 크기 */
+            min-height: 50px;
+            text-align: center;
+        }
+
+        th:first-child,
+        td:first-child {
+            position: sticky;
+            background-color: white;
+            left: 0;
+            z-index: 99;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>fixed</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="i in 100">
+                    <td>fixed {{ i }}</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+<script>
+    var app = new Vue({
+        el: '#app'
+    })
+</script>
+</html>
