@@ -7,6 +7,7 @@ var nunjucks = require('nunjucks');
 var indexRouter = require('./routes/index');
 var customInputFileRouter = require('./routes/customInputFile');
 var tableColumnFixedRouter = require('./routes/tableColumnFixed');
+var textEllipsis = require('./routes/textEllipsis');
 
 var app = express();
 
@@ -27,6 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/table-column-fixed', tableColumnFixedRouter);
 app.use('/custom-input-file', customInputFileRouter);
-
+app.use('/text-ellipsis', textEllipsis);
 
 module.exports = app;
